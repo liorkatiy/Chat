@@ -16,17 +16,21 @@ namespace ServerForm
 {
     public partial class Menu : Form
     {
+        string cn;
+
         public Menu()
         {
             InitializeComponent();
             MailCheckBox.Checked = false;
+            openFileDialog1.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
         }
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
             IPAddress ip;
-            if (ipTextBox.CanGetIP(out ip))
+            if (ipTextBox1.CanGetIP(out ip))
             {
+                string cn = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = " + GetDataBaseDirectory.Get() + "; Integrated Security = True";
                 IPEndPoint endPoint = new IPEndPoint(ip, (int)Port.Value);
                 string smtp = SmtpTextBox.Text;
                 int port = (int)MailPort.Value;
@@ -35,9 +39,9 @@ namespace ServerForm
                 string password = PasswordTextBox.Text;
                 ServerForm form;
                 if (MailCheckBox.Checked)
-                    form = new ServerForm((int)UserAmount.Value, ConnectionStringTextBox.Text, endPoint, smtp, port, ssl, username, password);
+                    form = new ServerForm((int)UserAmount.Value, cn, endPoint, smtp, port, ssl, username, password);
                 else
-                    form = new ServerForm((int)UserAmount.Value, endPoint, ConnectionStringTextBox.Text);
+                    form = new ServerForm((int)UserAmount.Value, endPoint, cn);
                 form.Show();
                 Hide();
                 form.FormClosed += (o, arg) => Show();
@@ -48,12 +52,12 @@ namespace ServerForm
         {
             if (MailCheckBox.Checked)
             {
-                Height = 440;
+                Height = 360;
                 MailGroup.Show();
             }
             else
             {
-                Height = 200;
+                Height = 150;
                 MailGroup.Hide();
             }
         }

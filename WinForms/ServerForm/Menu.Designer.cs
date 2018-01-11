@@ -45,9 +45,8 @@
             this.SmtpTextBox = new System.Windows.Forms.TextBox();
             this.UserNameTextBox = new System.Windows.Forms.TextBox();
             this.MailCheckBox = new System.Windows.Forms.CheckBox();
-            this.ipTextBox = new WinFormsExtensions.IPTextBox();
-            this.ConnectionStringTextBox = new System.Windows.Forms.TextBox();
-            this.ConnectionStringLabel = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.ipTextBox1 = new WinFormsExtensions.IPTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.UserAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Port)).BeginInit();
             this.MailGroup.SuspendLayout();
@@ -211,7 +210,7 @@
             this.MailGroup.Controls.Add(this.label7);
             this.MailGroup.Controls.Add(this.label6);
             this.MailGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.MailGroup.Location = new System.Drawing.Point(10, 171);
+            this.MailGroup.Location = new System.Drawing.Point(12, 109);
             this.MailGroup.Name = "MailGroup";
             this.MailGroup.Size = new System.Drawing.Size(321, 218);
             this.MailGroup.TabIndex = 10;
@@ -276,43 +275,25 @@
             this.MailCheckBox.UseVisualStyleBackColor = true;
             this.MailCheckBox.CheckedChanged += new System.EventHandler(this.MailCheckBox_CheckedChanged);
             // 
-            // ipTextBox
+            // openFileDialog1
             // 
-            this.ipTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.ipTextBox.Location = new System.Drawing.Point(65, 19);
-            this.ipTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.ipTextBox.Name = "ipTextBox";
-            this.ipTextBox.Size = new System.Drawing.Size(132, 26);
-            this.ipTextBox.TabIndex = 12;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // ConnectionStringTextBox
+            // ipTextBox1
             // 
-            this.ConnectionStringTextBox.Location = new System.Drawing.Point(10, 130);
-            this.ConnectionStringTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.ConnectionStringTextBox.Name = "ConnectionStringTextBox";
-            this.ConnectionStringTextBox.Size = new System.Drawing.Size(316, 20);
-            this.ConnectionStringTextBox.TabIndex = 13;
-            this.ConnectionStringTextBox.Text = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\UserPC\\Desktop\\Chat\\" +
-    "DataBase\\ChatDB.mdf;Integrated Security=True";
-            // 
-            // ConnectionStringLabel
-            // 
-            this.ConnectionStringLabel.AutoSize = true;
-            this.ConnectionStringLabel.Location = new System.Drawing.Point(9, 115);
-            this.ConnectionStringLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ConnectionStringLabel.Name = "ConnectionStringLabel";
-            this.ConnectionStringLabel.Size = new System.Drawing.Size(91, 13);
-            this.ConnectionStringLabel.TabIndex = 14;
-            this.ConnectionStringLabel.Text = "Connection String";
+            this.ipTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.ipTextBox1.Location = new System.Drawing.Point(66, 15);
+            this.ipTextBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.ipTextBox1.Name = "ipTextBox1";
+            this.ipTextBox1.Size = new System.Drawing.Size(145, 29);
+            this.ipTextBox1.TabIndex = 16;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 383);
-            this.Controls.Add(this.ConnectionStringLabel);
-            this.Controls.Add(this.ConnectionStringTextBox);
-            this.Controls.Add(this.ipTextBox);
+            this.ClientSize = new System.Drawing.Size(334, 321);
+            this.Controls.Add(this.ipTextBox1);
             this.Controls.Add(this.MailCheckBox);
             this.Controls.Add(this.MailGroup);
             this.Controls.Add(this.Port);
@@ -355,7 +336,7 @@
         private System.Windows.Forms.TextBox SmtpTextBox;
         private WinFormsExtensions.IPTextBox ipTextBox;
         private System.Windows.Forms.NumericUpDown MailPort;
-        private System.Windows.Forms.TextBox ConnectionStringTextBox;
-        private System.Windows.Forms.Label ConnectionStringLabel;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private WinFormsExtensions.IPTextBox ipTextBox1;
     }
 }
